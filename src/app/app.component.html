@@ -1,7 +1,7 @@
 <div class="container">
 
   <h3>Invoice</h3>
-
+  <!-- TitleCasePipe -->
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-
+  <!-- DatePipe -->
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -27,11 +27,12 @@
     <div class="col-md-6">
       <label><b>Payment Date</b></label>
       <div>
-        {{date | date :'MMMM,d,y'	}}
+        {{date | date :'MMMM,d,y' }}
       </div>
     </div>
   </div>
 
+  <!-- CurrencyPipe -->
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -47,6 +48,38 @@
     </div>
   </div>
 
+  <!-- DecimalPipe -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label><b>Height</b></label>
+        <input class="form-control" type="text" (input)="onHeightChange($event.target.value)">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label><b>Height</b></label>
+      <div>
+        {{height | number: '1.0-2'}}
+      </div>
+    </div>
+  </div>
+
+  <!-- create pipe with ng generate pipe convert -->
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label><b>Mile</b></label>
+        <input class="form-control" type="text" (input)="onMilesChange($event.target.value)">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label><b>Kilometer</b></label>
+      <div>
+        {{miles | convert :'km'}}
+      </div>
+    </div>
+  </div>
+
+  
 </div>
-
-
